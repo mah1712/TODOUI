@@ -6,3 +6,16 @@ steps:
   - task: DockerInstaller@0
     inputs:
       dockerVersion: '17.09.0-ce'
+
+  - task: Docker@2
+    inputs:
+      containerRegistry: 'ACRconnection'
+      command: 'login'
+
+  - task: Docker@2
+    inputs:
+      containerRegistry: 'ACRconnection'
+      command: 'buildAndPush'
+      Dockerfile: '**/Dockerfile'
+
+  

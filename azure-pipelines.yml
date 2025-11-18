@@ -12,10 +12,5 @@ steps:
       containerRegistry: 'ACRconnection'
       command: 'login'
 
-  - task: Docker@2
-    inputs:
-      containerRegistry: 'ACRconnection'
-      command: 'buildAndPush'
-      Dockerfile: '**/Dockerfile'
 
   
